@@ -127,7 +127,7 @@ class Redis(base.SocketStatsPlugin):
         :rtype: dict
 
         """
-        connection.send("*0\r\ninfo\r\n")
+        connection.send("*1\r\n$4\r\ninfo\r\n")
 
         # Read in the first line $1437
         buffer_value = connection.recv(self.SOCKET_RECV_MAX)
